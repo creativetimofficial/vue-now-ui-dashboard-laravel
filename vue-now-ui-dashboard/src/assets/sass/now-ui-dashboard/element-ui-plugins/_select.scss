@@ -1,0 +1,76 @@
+@import "../variables";
+
+$box-shadow-lg: 0px 10px 50px 0px rgba(0, 0, 0, 0.2);
+.select-card-styles {
+  box-shadow: $box-shadow-lg;
+  border: none;
+  border-radius: $border-radius-small !important;
+}
+
+@mixin select($type) {
+  .select-#{$type} {
+    &.el-select .el-input {
+      .el-input__inner {
+        @extend .btn-#{$type};
+      }
+    }
+    &.el-select-dropdown__item.selected {
+      @extend .text-#{$type};
+    }
+  }
+}
+
+.el-select .el-select__tags {
+  left: 5px;
+}
+
+.el-select .el-select__tags .el-tag {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: $white-color;
+  font-weight: $font-weight-normal;
+  padding: 0;
+  margin-top: 12px;
+  margin-right: 3px;
+  &:first-child {
+    margin-left: 20px;
+  }
+
+  .el-tag__close.el-icon-close {
+    opacity: 1;
+    background-color: transparent;
+    left: 0;
+
+    &:hover {
+      background-color: transparent;
+      color: $white-color;
+    }
+  }
+}
+
+.el-select .el-input {
+  .el-select__caret {
+    color: $white-color !important;
+  }
+
+  .el-input__inner {
+    @extend .btn-round, .btn-base;
+    color: $white-color;
+    &::placeholder {
+      color: $white-color;
+      opacity: 1; /* Firefox */
+    }
+
+  }
+}
+
+.el-select-dropdown.el-popper {
+  border-radius: 10px;
+  @extend .select-card-styles;
+}
+
+@include select('info')
+@include select('primary')
+@include select('success')
+@include select('warning')
+@include select('danger')

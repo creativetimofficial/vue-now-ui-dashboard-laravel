@@ -1,0 +1,517 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: none;
+  -webkit-touch-callout: none;
+  box-sizing: border-box;
+}
+
+body:not(.ready) {
+  overflow: hidden;
+
+  [data-cloak],
+  .app-nav,
+  > nav {
+    display: none;
+  }
+}
+
+div#app {
+  font-size: 30px;
+  font-weight: lighter;
+  margin: 40vh auto;
+  text-align: center;
+
+  &:empty::before {
+    content: 'Loading...';
+  }
+}
+
+.emoji {
+  height: 1.2rem;
+  vertical-align: middle;
+}
+
+.search a:hover {
+  color: var(--theme-color, $color-primary);
+}
+
+.search .search-keyword {
+  color: var(--theme-color, $color-primary);
+  font-style: normal;
+  font-weight: bold;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: $color-text;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+a[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+kbd {
+  border: solid 1px #ccc;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 12px !important;
+  line-height: 12px;
+  margin-bottom: 3px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.task-list-item {
+  list-style-type: none;
+}
+
+li input[type=checkbox] {
+  margin: 0 0.2em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+/* navbar */
+.app-nav {
+  left: 0;
+  margin: 25px 60px 0 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  z-index: 10;
+
+  &.no-badge {
+    margin-right: 25px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  > a {
+    margin: 0 1rem;
+    padding: 5px 0;
+  }
+
+  ul,
+  li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--theme-color, $color-primary);
+    }
+
+    &.active {
+      border-bottom: 2px solid var(--theme-color, $color-primary);
+      color: var(--theme-color, $color-primary);
+    }
+  }
+
+  /* navbar dropdown */
+  li {
+    display: inline-block;
+    margin: 0 1rem;
+    padding: 5px 0;
+    position: relative;
+
+    ul {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-bottom-color: #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      display: none;
+      max-height: calc(100vh - 61px);
+      overflow-y: scroll;
+      padding: 10px 0;
+      position: absolute;
+      right: -15px;
+      text-align: left;
+      top: 100%;
+      white-space: nowrap;
+
+      li {
+        display: block;
+        font-size: 14px;
+        line-height: 1rem;
+        margin: 0;
+        margin: 8px 14px;
+        white-space: nowrap;
+      }
+
+      a {
+        display: block;
+        font-size: inherit;
+        margin: 0;
+        padding: 0;
+
+        &.active {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    &:hover ul {
+      display: block;
+    }
+  }
+}
+
+/* github corner */
+.github-corner {
+  border-bottom: 0;
+  position: fixed;
+  right: 0;
+  text-decoration: none;
+  top: 0;
+  z-index: 1;
+
+  &:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+
+  svg {
+    color: $color-bg;
+    fill: var(--theme-color, $color-primary);
+    height: 80px;
+    width: 80px;
+  }
+}
+
+/* main */
+main {
+  display: block;
+  position: relative;
+  width: 100vw;
+  z-index: 0;
+}
+
+.anchor {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  span {
+    color: $color-text;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* sidebar */
+.docsify-sidebar {
+  border-right: 1px solid rgba(0, 0, 0, 0.07);
+  overflow-y: auto;
+  padding: 40px 0 0;
+  position: absolute;
+  transition: transform 250ms ease-out;
+  width: $sidebar-width;
+  z-index: 20;
+  height: 100vh;
+
+  > h1 {
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .app-nav {
+      display: block;
+      position: static;
+    }
+  }
+
+  .sidebar-nav {
+    line-height: 2em;
+    padding-bottom: 40px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li > p {
+    font-weight: 700;
+    margin: 0;
+  }
+
+  ul,
+  ul li {
+    list-style: none;
+  }
+
+  ul li a {
+    border-bottom: none;
+    display: block;
+  }
+
+  ul li ul {
+    padding-left: 20px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.4);
+  }
+
+  &:hover::-webkit-scrollbar-track {
+    background: rgba(136, 136, 136, 0.1);
+  }
+}
+
+/* sidebar toggle */
+.sidebar-toggle {
+  border: 0;
+  outline: none;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  transition: opacity 0.3s;
+  width: 30px;
+  z-index: 30;
+
+  .sidebar-toggle-button:hover {
+    opacity: 0.4;
+  }
+
+  span {
+    background-color: var(--theme-color, $color-primary);
+    display: block;
+    margin-bottom: 4px;
+    width: 16px;
+    height: 2px;
+  }
+}
+
+body.sticky {
+  .docsify-sidebar,
+  .sidebar-toggle {
+    position: fixed;
+  }
+}
+
+/* main content */
+.content {
+  padding-top: 60px;
+  position: absolute;
+  left: $sidebar-width;
+  width: calc(100vw - #{$sidebar-width});
+  transition: left 250ms ease;
+}
+
+/* markdown content found on pages */
+.markdown-section {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 30px 15px 40px 15px;
+  position: relative;
+
+  > :first-child {
+    margin-top: 0 !important;
+  }
+}
+
+.markdown-section hr {
+  border: none;
+  border-bottom: 1px solid #eee;
+  margin: 2em 0;
+}
+
+
+.markdown-section p.tip {
+  background-color: #f8f8f8;
+  border-bottom-right-radius: 2px;
+  border-left: 4px solid #f66;
+  border-top-right-radius: 2px;
+  margin: 2em 0;
+  padding: 12px 24px 12px 30px;
+  position: relative;
+
+  &:before {
+    background-color: #f66;
+    border-radius: 100%;
+    color: $color-bg;
+    content: '!';
+    font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    left: -12px;
+    line-height: 20px;
+    position: absolute;
+    width: 20px;
+    text-align: center;
+    top: 14px;
+  }
+
+  code {
+    background-color: #efefef;
+  }
+
+  em {
+    color: $color-text;
+  }
+}
+
+.markdown-section p.warn {
+  background: rgba($color-primary, 0.1);
+  border-radius: 2px;
+  padding: 1rem;
+}
+
+body.close {
+  .docsify-sidebar {
+    transform: translateX(-$sidebar-width);
+  }
+
+  .sidebar-toggle {
+    width: auto;
+  }
+
+  .content {
+    left: 0;
+    width: 100vw;
+  }
+}
+
+@media print {
+  .github-corner,
+  .sidebar-toggle,
+  .docsify-sidebar ,
+  .app-nav {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .github-corner,
+  .sidebar-toggle,
+  .docsify-sidebar {
+    position: fixed;
+  }
+
+  .app-nav {
+    margin-top: 16px;
+  }
+
+  .app-nav li ul {
+    top: 30px;
+  }
+
+  main {
+    height: auto;
+    overflow-x: hidden;
+  }
+
+  .docsify-sidebar {
+    left: -$sidebar-width;
+    transition: transform 250ms ease-out;
+  }
+
+  .content {
+    left: 0;
+    max-width: 100vw;
+    width: 100vw;
+    position: static;
+    padding-top: 20px;
+    transition: transform 250ms ease;
+  }
+
+  .app-nav,
+  .github-corner {
+    transition: transform 250ms ease-out;
+  }
+
+  .sidebar-toggle {
+    background-color: transparent;
+    width: auto;
+    padding: 30px 30px 10px 10px;
+  }
+
+  body.close {
+    .docsify-sidebar {
+      transform: translateX($sidebar-width);
+    }
+
+    .sidebar-toggle {
+      background-color: rgba($color-bg, 0.8);
+      transition: 1s background-color;
+      width: calc(#{$sidebar-width} - 16px);
+      padding: 10px;
+    }
+
+    .content {
+      transform: translateX($sidebar-width);
+    }
+
+    .app-nav,
+    .github-corner {
+      display: none;
+    }
+  }
+
+  .github-corner {
+    &:hover .octo-arm {
+      animation: none;
+    }
+    .octo-arm {
+      animation: octocat-wave 560ms ease-in-out;
+    }
+  }
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}

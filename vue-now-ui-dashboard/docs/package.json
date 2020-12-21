@@ -1,0 +1,35 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "> Vue Now UI dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "vue-cli-service serve --open",
+    "dev": "npm run serve",
+    "build": "vue-cli-service build && npm run copy-docs",
+    "copy-docs": "ncp dist ../dist/documentation",
+    "copy:docs": "ncp dist ../dist/documentation"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vue/cli-service": "^4.5.9",
+    "copy": "^0.3.2",
+    "marked": "^0.3.6"
+  },
+  "devDependencies": {
+    "ncp": "^2.0.0",
+    "prismjs": "^1.9.0"
+  },
+  "babel": {
+    "presets": [
+      "@vue/app"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 11"
+  ]
+}

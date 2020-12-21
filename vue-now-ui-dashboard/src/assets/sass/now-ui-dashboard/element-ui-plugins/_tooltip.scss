@@ -1,0 +1,4 @@
+.el-tooltip__popper.is-light,
+.el-tooltip__popper.is-dark{
+  @extend .tooltip-inner;
+}

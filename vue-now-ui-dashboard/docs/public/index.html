@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue Now UI DashboardLaravel by Creative Tim & UPDIVISION</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.5, minimum-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app"></div>
+
+</body>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script>
+  window.$docsify = {
+    repo: 'creativetimofficial/vue-now-ui-dashboard-laravel',
+    loadSidebar: "sidebar.md",
+    themeColor: '#f96332',
+    auto2top: true,
+    search: 'auto',
+    plugins: [
+      DemoBoxVue.create(),
+      function (hook, vm) {
+        hook.mounted(function () {
+          var sidebar = document.querySelector('aside.sidebar');
+          sidebar.classList.remove('sidebar');
+          sidebar.classList.add('docsify-sidebar');
+        })
+        hook.afterEach(function(html, next) {
+          html = html.replace(/\<table/g, '\<table class="table"');
+          html = html.replace(/\<thead/g, '\<thead class="text-primary"');
+          next(html)
+        })
+      }
+    ]
+  }
+
+</script>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+</html>

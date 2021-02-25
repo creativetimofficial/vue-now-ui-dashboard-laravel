@@ -733,7 +733,7 @@ We use GitHub Issues as the official bug tracker for the Now UI Kit. Here are so
 
 ## Licensing
 
-- Copyright 2020 Creative Tim (https://www.creative-tim.com/?ref=vadl-readme)
+- Copyright Creative Tim (https://www.creative-tim.com/?ref=vnudl-readme)
 
 - Licensed under MIT (https://github.com/creativetimofficial/vue-now-ui-dashboard-laravel/blob/master/LICENSE.md)
 

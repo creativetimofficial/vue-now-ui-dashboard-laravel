@@ -62,7 +62,7 @@ export default {
 
   methods: {
     async handleChangePassword() {
-      if (this.$isDemo == 1 && ["1", "2", "3"].includes(this.user.id)) {
+      if (["1"].includes(this.user.id)) {
         await this.$store.dispatch(
           "alerts/error",
           "You are not allowed to change data of default users."

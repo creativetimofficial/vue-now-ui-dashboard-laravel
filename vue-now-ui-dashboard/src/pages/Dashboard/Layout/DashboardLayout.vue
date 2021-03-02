@@ -70,6 +70,30 @@
             path: '/components/typography',
           }"
         ></sidebar-item>
+
+        <a
+          href="https://www.creative-tim.com/product/vue-white-dashboard-pro-laravel"
+          target="_blank"
+          class="btn btn-primary"
+          rel="noopener"
+          style="margin-left: 15px"
+        >
+          <span class="btn-inner--icon"
+            ><i class="fas fa-download" style="margin-left: 14px"></i
+          ></span>
+
+          <div
+            class="nav-link-inner--text"
+            style="
+              margin-left: -4px;
+              margin-right: 90px;
+              margin-top: 8px;
+              white-space: nowrap;
+            "
+          >
+            Upgrade to PRO
+          </div></a
+        >
       </template>
     </side-bar>
     <div class="main-panel">

@@ -34,12 +34,12 @@
         <i class="fas fa-file-alt mr-2"></i>Documentation</a
       >
       <a
-        href="https://www.creative-tim.com/product/vue-now-ui-dashboard-pro-laravel"
+        href="https://www.creative-tim.com/product/vue-now-ui-dashboard-laravel"
         target="_blank"
         class="btn mr-3 mt-0"
-        style="background-color: #f96332"
+        style="background-color: #4bb5ff"
       >
-        <i class="fas fa-download mr-2"></i>Upgrade to PRO</a
+        <i class="fas fa-gift mr-2"></i>Download now</a
       >
       <form>
         <div class="input-group no-border">

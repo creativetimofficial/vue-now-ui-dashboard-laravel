@@ -28,7 +28,7 @@
               </li>
 
               <li>
-                <a @click.prevent="logout()">
+                <a class="twhite" @click.prevent="logout()">
                   <span class="sidebar-mini-icon">L</span>
                   <span class="sidebar-normal">Logout</span>
                 </a>
@@ -92,5 +92,8 @@ export default {
 .user__menu ul.user-menu__nav {
   margin-top: 0;
   padding-top: 20px;
+}
+a.twhite:hover {
+  color: white !important;
 }
 </style>

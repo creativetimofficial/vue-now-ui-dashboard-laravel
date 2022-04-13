@@ -9,3 +9,6 @@ All notable changes to `Vue Now UI Dashboard Laravel`  will be documented in thi
 - Login
 - Register
 - Profile edit
+
+## Version 1.0.1
+Update to Laravel 9.x
